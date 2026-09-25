@@ -1,0 +1,58 @@
+{
+ "ladderxgb_x1": {
+  "runs": [
+   "final_ladderxgb_s42"
+  ],
+  "oof_auc_rank_average": 0.9456194475551417
+ },
+ "lgbm_x9": {
+  "runs": [
+   "final_lgbm_s101",
+   "final_lgbm_s101os13",
+   "final_lgbm_s101os7",
+   "final_lgbm_s2026",
+   "final_lgbm_s2026os13",
+   "final_lgbm_s2026os7",
+   "final_lgbm_s42",
+   "final_lgbm_s42os13",
+   "final_lgbm_s42os7"
+  ],
+  "oof_auc_rank_average": 0.9462414579756682
+ },
+ "logreg_x1": {
+  "runs": [
+   "final_logreg_s42"
+  ],
+  "oof_auc_rank_average": 0.9457950428246182
+ },
+ "mlp_x2": {
+  "runs": [
+   "final_mlp_s101",
+   "final_mlp_s42"
+  ],
+  "oof_auc_rank_average": 0.9450472101593499
+ },
+ "realmlp_x1": {
+  "runs": [
+   "final_realmlp_s42"
+  ],
+  "oof_auc_rank_average": 0.9453984425455426
+ },
+ "xgb_x9": {
+  "runs": [
+   "final_xgb_s101",
+   "final_xgb_s101os13",
+   "final_xgb_s101os7",
+   "final_xgb_s2026",
+   "final_xgb_s2026os13",
+   "final_xgb_s2026os7",
+   "final_xgb_s42",
+   "final_xgb_s42os13",
+   "final_xgb_s42os7"
+  ],
+  "oof_auc_rank_average": 0.9462336794163274
+ },
+ "blend_v4_nested": {
+  "oof_auc": 0.9464195497968517
+ }
+}

@@ -1,0 +1,24 @@
+[
+ {
+  "ref": 56479522,
+  "file": "public anchor (rank-average of public CC0 files + rules)",
+  "public": 0.94659
+ },
+ {
+  "ref": 56530246,
+  "file": "fresh_family_blend_v2",
+  "nested_oof": 0.946397,
+  "public": 0.94641
+ },
+ {
+  "ref": 56530254,
+  "file": "50/50 rank mix anchor + v2",
+  "public": 0.94653
+ },
+ {
+  "ref": 56545770,
+  "file": "fresh_family_blend_v4",
+  "nested_oof": 0.9464195,
+  "public": 0.94638
+ }
+]

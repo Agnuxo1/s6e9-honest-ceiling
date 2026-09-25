@@ -1,0 +1,141 @@
+{
+ "folds": "outer folds 0,1,2 of StratifiedKFold(10, seed 42)",
+ "runs": {
+  "abl_alpha10": {
+   "description": "all TE priors x10",
+   "fold_auc": [
+    0.944686,
+    0.94506,
+    0.94525
+   ]
+  },
+  "abl_deep": {
+   "description": "depth 8, lr 0.01",
+   "fold_auc": [
+    0.944858,
+    0.945069,
+    0.945204
+   ]
+  },
+  "abl_drop_orig": {
+   "description": "drop original-table lookups",
+   "fold_auc": [
+    0.944865,
+    0.945012,
+    0.945371
+   ]
+  },
+  "abl_no_cell_te": {
+   "description": "drop income x recipe-cell TE",
+   "fold_auc": [
+    0.944903,
+    0.9452,
+    0.945519
+   ]
+  },
+  "abl_no_cnt": {
+   "description": "drop in-fold key counts",
+   "fold_auc": [
+    0.944776,
+    0.945027,
+    0.945262
+   ]
+  },
+  "abl_shallow": {
+   "description": "depth 5, lr 0.03",
+   "fold_auc": [
+    0.944926,
+    0.945038,
+    0.945362
+   ]
+  },
+  "abl_windows": {
+   "description": "add centred-window target rates",
+   "fold_auc": [
+    0.944777,
+    0.945129,
+    0.945359
+   ]
+  },
+  "abl2_nocell_lowcol": {
+   "description": "drop cell TE + colsample 0.25 (FINAL CONFIG)",
+   "fold_auc": [
+    0.945048,
+    0.945197,
+    0.945471
+   ]
+  },
+  "abl2_nocell_noorig": {
+   "description": "drop cell TE + original lookups",
+   "fold_auc": [
+    0.944992,
+    0.945237,
+    0.945391
+   ]
+  },
+  "abl2_nocell_nosub": {
+   "description": "drop cell TE + income x subsidy TE",
+   "fold_auc": [
+    0.944967,
+    0.945167,
+    0.945491
+   ]
+  },
+  "abl2_lgbm_nocell": {
+   "description": "LightGBM, drop cell TE",
+   "fold_auc": [
+    0.94499,
+    0.945249,
+    0.945448
+   ]
+  },
+  "abl3_pair_city": {
+   "description": "final + income x City TE",
+   "fold_auc": [
+    0.945012,
+    0.945168,
+    0.945519
+   ]
+  },
+  "abl3_pair_car": {
+   "description": "final + income x car-type TE",
+   "fold_auc": [
+    0.945019,
+    0.945107,
+    0.945422
+   ]
+  },
+  "abl3_pair_home": {
+   "description": "final + income x home-charging TE",
+   "fold_auc": [
+    0.944979,
+    0.94515,
+    0.945417
+   ]
+  },
+  "abl3_pair_all": {
+   "description": "final + five income x column TEs",
+   "fold_auc": [
+    0.94492,
+    0.945191,
+    0.945376
+   ]
+  },
+  "probe_ladder_xgb": {
+   "description": "different view: no exact-income key, granularity ladder",
+   "fold_auc": [
+    0.944473,
+    0.944731,
+    0.945058
+   ]
+  },
+  "baseline_xgb_all_features": {
+   "description": "all 74 features (first run)",
+   "fold_auc": [
+    0.944837,
+    0.94511,
+    0.945323
+   ]
+  }
+ }
+}

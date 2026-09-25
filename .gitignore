@@ -1,0 +1,17 @@
+# competition data and large artefacts are never committed
+data/
+work/
+*.parquet
+*.npy
+*.npz
+*.zip
+submission*.csv
+logs/
+# python
+__pycache__/
+*.egg-info/
+.pytest_cache/
+build/
+dist/
+.venv/
+.ipynb_checkpoints/

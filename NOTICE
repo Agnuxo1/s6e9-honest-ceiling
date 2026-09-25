@@ -1,0 +1,24 @@
+Honest Ceiling
+Copyright 2026 Francisco Angulo de Lafuente
+
+This product is licensed under the Apache License, Version 2.0 (see LICENSE).
+
+Data and third-party material
+-----------------------------
+* Kaggle Playground Series S6E9 competition data (CC BY 4.0) is NOT redistributed in this repository. Download it
+  from https://www.kaggle.com/competitions/playground-series-s6e9 after accepting the competition rules.
+* "EV Adoption Behavior and Range Anxiety" by itzzomkar (CC0-1.0),
+  https://www.kaggle.com/datasets/itzzomkar/ev-adoption-behavior-and-range-anxiety
+  Used as an unsupervised lookup table (and its labels as external data), never as extra training rows.
+* "S6E9 Six Feature Views OOF Library" by megayak (CC0-1.0),
+  https://www.kaggle.com/datasets/megayak/s6e9-six-feature-views-oof-library
+  Its out-of-fold and test predictions are blended with our own legs; the files are not redistributed.
+* The generator's purchase and range-anxiety recipes were reconstructed by Chris Deotte in the public notebook
+  "Fable 5.1 - EDA - Original Data Insights" and are re-implemented here from their published formulas.
+* RealMLP legs use pytabkit (Apache-2.0), https://github.com/dholzmueller/pytabkit
+
+Competition conduct
+-------------------
+No hidden labels, no leaderboard probing or row-level inference from submissions, and no private sharing of code
+with other participants were used. The code was published after the competition closed, as permitted by the rules.
+Results files contain only our own predictions, summary statistics and search logs.

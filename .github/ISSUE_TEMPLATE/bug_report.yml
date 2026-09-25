@@ -1,0 +1,16 @@
+name: Bug report
+description: Something in the package or the scripts does not work
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: Command, full error message and what you expected
+    validations:
+      required: true
+  - type: input
+    id: env
+    attributes:
+      label: Environment
+      description: OS, Python version, package versions (pip freeze | grep -E "lightgbm|xgboost|numpy|pandas")

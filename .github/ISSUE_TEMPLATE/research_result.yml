@@ -1,0 +1,35 @@
+name: Research result
+description: Report an attempt to beat the honest ceiling (positive or negative)
+labels: [research]
+body:
+  - type: textarea
+    id: hypothesis
+    attributes:
+      label: Hypothesis
+      description: What structure or method did you test, and why did you expect it to help?
+    validations:
+      required: true
+  - type: input
+    id: code
+    attributes:
+      label: Code
+      description: Link to a fork, gist or Kaggle notebook
+    validations:
+      required: true
+  - type: textarea
+    id: numbers
+    attributes:
+      label: Numbers (acceptance test in ROADMAP.md)
+      description: Nested out-of-fold AUC per fold with and without your contribution, and the paired private-size bootstrap.
+      render: text
+    validations:
+      required: true
+  - type: checkboxes
+    id: honesty
+    attributes:
+      label: Fold safety
+      options:
+        - label: Every supervised statistic was fit inside the outer-train partition of StratifiedKFold(10, shuffle=True, random_state=42)
+          required: true
+        - label: No leaderboard probing, hidden labels or non-public data were used
+          required: true

@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Honest Ceiling · Kaggle S6E9</title>
+<meta name="description" content="Fold-safe ensembling to the honest ceiling of Kaggle Playground S6E9, and a Darwin-Cage search that found nothing left in the residual, with a power analysis.">
+<meta property="og:title" content="Honest Ceiling · Kaggle Playground S6E9">
+<meta property="og:description" content="Nested OOF 0.946420 · oracle bound 0.94660 · 47,679 evolved feature programs, 0 discoveries.">
+<meta property="og:image" content="https://agnuxo1.github.io/s6e9-honest-ceiling/assets/banner.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fbfbfa; --surface:#ffffff; --surface-2:#f3f3f1; --text:#0b0d12; --text-2:#4a4b52; --muted:#7a7b82;
+  --line:#e4e4e0; --accent-1:#11a88a; --accent-2:#5b6cf0; --code-bg:#f3f3f1; --shadow:0 1px 2px rgba(11,13,18,.06),0 8px 24px rgba(11,13,18,.06);
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b0d12; --surface:#12151c; --surface-2:#181c25; --text:#f3f4f6; --text-2:#b9bcc6; --muted:#858996;
+    --line:#252a35; --accent-1:#5ee2c4; --accent-2:#7c8cff; --code-bg:#181c25; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b0d12; --surface:#12151c; --surface-2:#181c25; --text:#f3f4f6; --text-2:#b9bcc6; --muted:#858996;
+  --line:#252a35; --accent-1:#5ee2c4; --accent-2:#7c8cff; --code-bg:#181c25; --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 Inter,system-ui,-apple-system,"Segoe UI",sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--accent-2);text-decoration:none} a:hover{text-decoration:underline}
+.wrap{max-width:1040px;margin:0 auto;padding-left:20px;padding-right:20px}
+@media (max-width:480px){.wrap{padding-left:16px;padding-right:16px}}
+header.nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 86%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+header.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px;gap:12px}
+.brand{font-weight:700;letter-spacing:-.01em;color:var(--text)}
+.brand span{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav-links{display:flex;gap:18px;font-size:14px;flex-wrap:wrap}
+.nav-links a{color:var(--text-2)}
+.theme{border:1px solid var(--line);background:var(--surface);color:var(--text-2);border-radius:8px;padding:5px 10px;font:inherit;font-size:13px;cursor:pointer}
+.hero{padding-top:72px;padding-bottom:40px}
+.eyebrow{font:600 12px/1 "JetBrains Mono",monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-1)}
+h1{font-size:clamp(34px,6vw,58px);line-height:1.05;letter-spacing:-.03em;margin:16px 0 18px}
+h1 .grad{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(17px,2.2vw,20px);color:var(--text-2);max-width:760px;margin:0}
+.cta{display:flex;gap:12px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:10px;font-weight:600;font-size:15px;border:1px solid var(--line);background:var(--surface);color:var(--text);box-shadow:var(--shadow)}
+.btn.primary{background:linear-gradient(90deg,var(--accent-1),var(--accent-2));color:#0b0d12;border:0}
+.btn:hover{text-decoration:none;transform:translateY(-1px)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:44px 0 8px}
+.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+.stat .label{font-size:13px;color:var(--muted)}
+.stat .value{font-size:30px;font-weight:700;letter-spacing:-.02em;margin-top:4px}
+.stat .note{font-size:12.5px;color:var(--text-2);margin-top:2px}
+section{padding:44px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(24px,3.4vw,32px);letter-spacing:-.02em;margin:0 0 14px}
+h3{font-size:18px;margin:26px 0 8px}
+p{color:var(--text-2);max-width:780px}
+.fig{margin:22px 0;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px;box-shadow:var(--shadow)}
+.fig img{width:100%;height:auto;display:block;border-radius:8px}
+.fig figcaption{font-size:13.5px;color:var(--muted);padding:8px 6px 2px}
+.steps{counter-reset:s;list-style:none;padding:0;margin:18px 0;display:grid;gap:12px}
+.steps li{counter-increment:s;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 16px 14px 56px;position:relative;color:var(--text-2)}
+.steps li::before{content:counter(s);position:absolute;left:16px;top:14px;width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));color:#0b0d12;font-weight:700;font-size:13px;display:grid;place-items:center}
+.steps b{color:var(--text)}
+table{width:100%;border-collapse:collapse;font-size:14.5px;margin:14px 0;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{text-align:left;padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:600;color:var(--text);background:var(--surface-2)}
+td{color:var(--text-2)} td.num{font-variant-numeric:tabular-nums;white-space:nowrap;color:var(--text)}
+tr:last-child td{border-bottom:0}
+pre{background:var(--code-bg);border:1px solid var(--line);border-radius:12px;padding:16px;overflow:auto;font:13.5px/1.6 "JetBrains Mono",monospace;color:var(--text)}
+code{font-family:"JetBrains Mono",monospace;font-size:.92em;background:var(--code-bg);padding:1px 5px;border-radius:5px}
+pre code{background:none;padding:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;box-shadow:var(--shadow)}
+.card h3{margin-top:0}
+.card p{margin:6px 0 0;font-size:15px}
+.tag{display:inline-block;font:600 11px/1 "JetBrains Mono",monospace;letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:6px;background:var(--surface-2);color:var(--accent-1);margin-bottom:8px}
+.callout{border-left:3px solid var(--accent-1);background:var(--surface);padding:14px 18px;border-radius:0 12px 12px 0;color:var(--text-2);margin:18px 0}
+footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+@media (max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}.grid2{grid-template-columns:1fr}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="wrap">
+  <a class="brand" href="#top">Honest <span>Ceiling</span></a>
+  <nav class="nav-links">
+    <a href="#why">Why scores look alike</a><a href="#method">Method</a><a href="#darwin">Darwin Cage</a><a href="#open">Open doors</a><a href="#reproduce">Reproduce</a>
+  </nav>
+  <button class="theme" id="theme" type="button" aria-label="Toggle colour theme">Theme</button>
+</div></header>
+
+<main id="top">
+<div class="wrap hero">
+  <div class="eyebrow">Kaggle Playground S6E9 · Predicting EV purchases · ROC-AUC</div>
+  <h1>How high can an <span class="grad">honest model</span> go, and how do you know you have arrived?</h1>
+  <p class="lead">A fully fold-safe ensembling pipeline, an evolutionary search that starts from noise and is rewarded only by what it finds in the residual, a power analysis of that search, and every number behind the claims. Open source, Apache-2.0.</p>
+  <div class="cta">
+    <a class="btn primary" href="https://github.com/Agnuxo1/s6e9-honest-ceiling">View on GitHub</a>
+    <a class="btn" href="https://www.kaggle.com/code/franciscoangulo/s6e9-fold-safe-ensembling-to-the-honest-ceiling">Pipeline notebook</a>
+    <a class="btn" href="https://www.kaggle.com/code/franciscoangulo/s6e9-darwin-cage-on-the-residual">Darwin Cage notebook</a>
+    <a class="btn" href="https://www.kaggle.com/datasets/franciscoangulo/s6e9-honest-ceiling-oof-library">OOF library</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><div class="label">Nested out-of-fold AUC</div><div class="value">0.946420</div><div class="note">blend weights out of fold too</div></div>
+    <div class="stat"><div class="label">Oracle bound</div><div class="value">0.94660</div><div class="note">± 0.00028 if our probabilities were exact</div></div>
+    <div class="stat"><div class="label">Folds won vs public library</div><div class="value">10 / 10</div><div class="note">+0.000073 at private-split size</div></div>
+    <div class="stat"><div class="label">Evolved programs · discoveries</div><div class="value">47,679 · 0</div><div class="note">confirmed on a never-seen fold</div></div>
+  </div>
+</div>
+
+<section id="why"><div class="wrap">
+  <h2>Why every top score looks the same</h2>
+  <p>The public top 200 is packed into 0.0003 of AUC. One positive row of the 57k-row public split is worth about 0.00002, so ranks 2 to 28 differ by roughly eight rows. The label is the generator's purchase recipe plus an independent random draw per row. The only extra signal is that the generator copied incomes from a 10,000-row original table, so an exact income value partially identifies an original row. Once a model target-encodes that identity, nothing learnable remains.</p>
+  <figure class="fig"><picture><source media="(prefers-color-scheme: dark)" srcset="figures/leaderboard_dark.png"><img src="figures/leaderboard_light.png" alt="Histogram of the public top-200 scores" loading="lazy"></picture>
+  <figcaption>The first-placed public score (0.94945) is widely attributed to reading the public split with paired submissions; by construction that does not transfer to the private 80 %.</figcaption></figure>
+  <figure class="fig"><picture><source media="(prefers-color-scheme: dark)" srcset="figures/ceiling_dark.png"><img src="figures/ceiling_light.png" alt="AUC ladder and distance to the oracle bound" loading="lazy"></picture>
+  <figcaption>From the untrained recipe (0.9377) to the nested blend (0.94642): the last step sits inside the sampling error of its own oracle bound.</figcaption></figure>
+</div></section>
+
+<section id="method"><div class="wrap">
+  <h2>Method: every number out of fold</h2>
+  <ol class="steps">
+    <li><b>One frozen split.</b> <code>StratifiedKFold(10, shuffle=True, random_state=42)</code> over <code>train.csv</code> in id order, the split of the public OOF libraries, so every out-of-fold vector stacks row for row.</li>
+    <li><b>Nested target encoding.</b> Exact income, nearest original income, coarser income keys, exact commute and a few interactions are encoded inside each outer-train partition with an inner 5-fold cross-fit. A training row never sees its own label; the scored fold is never seen at all.</li>
+    <li><b>Early stopping without the scored fold.</b> A stratified 10 % slice of outer-train decides the number of trees.</li>
+    <li><b>Averaging over outer splits.</b> XGBoost and LightGBM each run on three outer splits × three seeds: 0.94606 per run becomes 0.94623 per family.</li>
+    <li><b>Nested blending.</b> Hill-climb weights are fit on 9 folds and scored on the 10th, for every fold, so the blend's own score is out of fold.</li>
+    <li><b>Paired check at leaderboard size.</b> Both candidates are scored on the same 229k-row subsamples, which is how the private leaderboard compares teams.</li>
+  </ol>
+  <figure class="fig"><picture><source media="(prefers-color-scheme: dark)" srcset="figures/folds_dark.png"><img src="figures/folds_light.png" alt="Per-fold gain over the public six-view ensemble" loading="lazy"></picture></figure>
+  <figure class="fig"><picture><source media="(prefers-color-scheme: dark)" srcset="figures/weights_dark.png"><img src="figures/weights_light.png" alt="Final blend weights" loading="lazy"></picture></figure>
+</div></section>
+
+<section id="darwin"><div class="wrap">
+  <h2>The Darwin-Cage experiment</h2>
+  <p>Do not tell the search what to look for or how. Random programs are built from the thirteen raw columns (remainders, integer divisions, decimal digits, bit shifts, categorical values; up to four atoms joined into one key), then mutated and recombined. Each program is rewarded only by how well its groups predict the <b>residual</b> of the best blend, out of fold, on nine search folds. The tenth fold is never touched: a program is a discovery only if it clears 3σ of the null there.</p>
+  <div class="grid2">
+    <div class="card"><span class="tag">Real residual</span><h3>47,679 programs, 0 confirmed</h3><p>27 hall-of-fame entries (6 distinct programs) looked strong on the search folds; every one collapsed on the reserved fold. Best confirmation 0.0052, threshold 0.012.</p></div>
+    <div class="card"><span class="tag">Power analysis</span><h3>Planted structures are found</h3><p>Labels redrawn from the real probabilities plus a planted per-group shift of known size: the same search, same budget, confirms them. That is what gives the null result its meaning.</p></div>
+  </div>
+  <figure class="fig"><picture><source media="(prefers-color-scheme: dark)" srcset="figures/darwin_dark.png"><img src="figures/darwin_light.png" alt="Darwin-Cage hall of fame versus planted signals" loading="lazy"></picture></figure>
+  <figure class="fig"><picture><source media="(prefers-color-scheme: dark)" srcset="figures/power_dark.png"><img src="figures/power_light.png" alt="Power analysis" loading="lazy"></picture></figure>
+  <figure class="fig"><picture><source media="(prefers-color-scheme: dark)" srcset="figures/residual_dark.png"><img src="figures/residual_light.png" alt="Autocorrelation of the residual" loading="lazy"></picture>
+  <figcaption>The residual behaves like white noise; the small negative values in income order have the sign cross-fitting produces.</figcaption></figure>
+</div></section>
+
+<section><div class="wrap">
+  <h2>What did not help, measured</h2>
+  <table>
+    <tr><th>Idea</th><th>Result</th></tr>
+    <tr><td>Exact income × recipe-cell target encoding</td><td class="num">−0.00012 / fold, removed</td></tr>
+    <tr><td>Original 10k rows as extra training data</td><td class="num">public evidence 0/5 folds</td></tr>
+    <tr><td>Window target rates, stronger smoothing, deeper trees</td><td class="num">neutral or negative</td></tr>
+    <tr><td>Income × city / car / home-charging encodings</td><td class="num">−0.00001 to −0.00008</td></tr>
+    <tr><td>Own MLP, RealMLP (48 epochs), logistic regression, ladder view</td><td class="num">zero blend weight</td></tr>
+    <tr><td>Reservoir-computing leg (random tanh + complex phase, ridge readout)</td><td class="num">+0.00001 (noise)</td></tr>
+    <tr><td>CatBoost with string identity columns</td><td class="num">0.9431 on fold 0, dropped</td></tr>
+  </table>
+</div></section>
+
+<section id="open"><div class="wrap">
+  <h2>Open doors</h2>
+  <p>A null result is only as good as the space it searched. These directions lie outside it; each has a falsifiable acceptance test in the <a href="https://github.com/Agnuxo1/s6e9-honest-ceiling/blob/main/ROADMAP.md">roadmap</a>. Beat the numbers honestly and your result will be added with credit.</p>
+  <div class="grid2">
+    <div class="card"><span class="tag">Encoding</span><h3>Partial pooling of the income identity</h3><p>Empirical-Bayes or hierarchical shrinkage tied to the nearest original row, instead of fixed priors.</p></div>
+    <div class="card"><span class="tag">Search</span><h3>Readouts that are not group means</h3><p>Score programs by the out-of-fold gain of a tiny model on the key and the logit, not by a correlation.</p></div>
+    <div class="card"><span class="tag">Structure</span><h3>Relations between rows</h3><p>Neighbourhood graphs over train + test and programs over neighbours' residuals.</p></div>
+    <div class="card"><span class="tag">Synthesis</span><h3>Learned or LLM-guided proposals</h3><p>Replace random mutation by a proposal model; measure evaluations to reach the planted structures.</p></div>
+    <div class="card"><span class="tag">Generator</span><h3>Model the synthetic generator</h3><p>Identify the generator family from the CC0 original and predict which original row a synthetic row came from.</p></div>
+    <div class="card"><span class="tag">Neural</span><h3>A converged neural leg</h3><p>RealMLP or TabM to convergence on the same nested encodings, about 20 GPU-hours.</p></div>
+  </div>
+</div></section>
+
+<section id="reproduce"><div class="wrap">
+  <h2>Reproduce</h2>
+<pre><code>git clone https://github.com/Agnuxo1/s6e9-honest-ceiling && cd s6e9-honest-ceiling
+pip install -e ".[gbdt]"
+kaggle competitions download -c playground-series-s6e9 -p data && unzip -o data/*.zip -d data
+honest-ceiling train --data-dir data --model xgb  --seeds 42 101 2026 --outer-seeds 42 7 13
+honest-ceiling train --data-dir data --model lgbm --seeds 42 101 2026 --outer-seeds 42 7 13
+honest-ceiling blend --data-dir data --library path/to/six-view-library
+honest-ceiling darwin --data-dir data --scores work/blend_oof_nested.npy --minutes 60</code></pre>
+  <div class="callout">Competition data is CC BY 4.0 and is not redistributed. External sources are CC0: the <a href="https://www.kaggle.com/datasets/itzzomkar/ev-adoption-behavior-and-range-anxiety">original table</a> and the <a href="https://www.kaggle.com/datasets/megayak/s6e9-six-feature-views-oof-library">six-view OOF library</a>. No leaderboard probing, hidden labels or private sharing.</div>
+  <h3>Cite</h3>
+<pre><code>@software{angulo_2026_honest_ceiling,
+  author = {Angulo de Lafuente, Francisco},
+  title  = {Honest Ceiling: fold-safe ensembling and a Darwin-Cage residual search on Kaggle Playground S6E9},
+  year   = {2026}, url = {https://github.com/Agnuxo1/s6e9-honest-ceiling}, license = {Apache-2.0}}</code></pre>
+</div></section>
+</main>
+
+<footer><div class="wrap">
+  Apache-2.0 © 2026 Francisco Angulo de Lafuente · Thanks to Chris Deotte, megayak, Marc Maldonado Lorca, Naji, Georgy Mamarin, Yusuke Hayashi and the S6E9 community.
+</div></footer>
+<script>
+(function(){
+  var b = document.getElementById('theme'), r = document.documentElement, mq = matchMedia('(prefers-color-scheme: dark)');
+  function effectiveDark(){ return r.dataset.theme ? r.dataset.theme === 'dark' : mq.matches; }
+  function pictures(){
+    document.querySelectorAll('picture').forEach(function(p){
+      var s = p.querySelector('source'), i = p.querySelector('img'); if (!s || !i) return;
+      if (!i.dataset.light){ i.dataset.light = i.getAttribute('src'); i.dataset.dark = s.getAttribute('srcset'); }
+      if (r.dataset.theme){ s.setAttribute('media', 'not all'); i.setAttribute('src', r.dataset.theme === 'dark' ? i.dataset.dark : i.dataset.light); }
+      else { s.setAttribute('media', '(prefers-color-scheme: dark)'); i.setAttribute('src', i.dataset.light); }
+    });
+  }
+  function render(){ pictures(); b.textContent = effectiveDark() ? 'Light mode' : 'Dark mode'; }
+  function set(t){ if (t) r.dataset.theme = t; else delete r.dataset.theme; try { t ? localStorage.setItem('hc-theme', t) : localStorage.removeItem('hc-theme'); } catch (e) {} render(); }
+  var saved = null; try { saved = localStorage.getItem('hc-theme'); } catch (e) {}
+  if (saved) r.dataset.theme = saved;
+  render();
+  mq.addEventListener('change', render);
+  b.addEventListener('click', function(){ set(effectiveDark() ? 'light' : 'dark'); });
+})();
+</script>
+</body>
+</html>

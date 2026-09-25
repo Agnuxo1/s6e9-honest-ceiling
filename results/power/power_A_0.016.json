@@ -1,0 +1,30 @@
+{
+ "plant": "A",
+ "program": [
+  [
+   "mod",
+   "Annual_Income_USD",
+   97
+  ]
+ ],
+ "effect": 0.016,
+ "n_groups": 97,
+ "oracle_auc_gain": 0.004881877849907346,
+ "planted_confirm_corr": 0.04265117775679499,
+ "detected": true,
+ "first_confirmed": {
+  "program": [
+   [
+    "raw",
+    "Annual_Income_USD"
+   ]
+  ],
+  "fit_mean": 0.0184490781532659,
+  "fit_min": 0.01526609859398655,
+  "n_keys": 13214,
+  "confirm": 0.01884925533228637
+ },
+ "evaluated": 57,
+ "seconds": 34.8,
+ "threshold": 0.012
+}
