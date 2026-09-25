@@ -1,0 +1,27 @@
+cff-version: 1.2.0
+message: "If you use this software or its results, please cite it as below."
+title: "Honest Ceiling: fold-safe ensembling and a Darwin-Cage residual search on Kaggle Playground S6E9"
+type: software
+authors:
+  - family-names: "Angulo de Lafuente"
+    given-names: "Francisco"
+version: 1.0.0
+date-released: 2026-10-01
+license: Apache-2.0
+repository-code: "https://github.com/Agnuxo1/s6e9-honest-ceiling"
+url: "https://agnuxo1.github.io/s6e9-honest-ceiling/"
+keywords:
+  - kaggle
+  - tabular data
+  - target encoding
+  - out-of-fold validation
+  - ensembling
+  - genetic programming
+  - negative results
+  - power analysis
+abstract: >-
+  A fully fold-safe ensembling pipeline (shared outer split, nested target encoding, nested hill-climb, averaging
+  over outer splits) reaches a nested out-of-fold ROC-AUC of 0.946420 on Kaggle Playground S6E9, within sampling
+  error of its own oracle bound (0.94660 ± 0.00028). An evolutionary search over 47,679 feature programs, rewarded
+  only by structure in the residual and confirmed on a never-seen fold, finds nothing; a power analysis with planted
+  signals shows what it would have found.

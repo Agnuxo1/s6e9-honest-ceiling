@@ -1,0 +1,35 @@
+{
+ "plant": "B",
+ "program": [
+  [
+   "digit",
+   "Annual_Income_USD",
+   100
+  ],
+  [
+   "cat",
+   "City_Type"
+  ]
+ ],
+ "effect": 0.008,
+ "n_groups": 30,
+ "oracle_auc_gain": 0.0021232421033909876,
+ "planted_confirm_corr": 0.018668200608813676,
+ "detected": true,
+ "first_confirmed": {
+  "program": [
+   [
+    "digit",
+    "Annual_Income_USD",
+    100
+   ]
+  ],
+  "fit_mean": 0.011899606868882086,
+  "fit_min": 0.007683835867481647,
+  "n_keys": 10,
+  "confirm": 0.013807812862935868
+ },
+ "evaluated": 57,
+ "seconds": 34.4,
+ "threshold": 0.012
+}

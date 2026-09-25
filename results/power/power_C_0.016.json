@@ -1,0 +1,45 @@
+{
+ "plant": "C",
+ "program": [
+  [
+   "mod",
+   "Daily_Commute_km",
+   37
+  ],
+  [
+   "mod",
+   "Age",
+   7
+  ]
+ ],
+ "effect": 0.016,
+ "n_groups": 259,
+ "oracle_auc_gain": 0.004808452153154619,
+ "planted_confirm_corr": 0.03904735725103487,
+ "detected": true,
+ "first_confirmed": {
+  "program": [
+   [
+    "cat",
+    "Subsidy_Available"
+   ],
+   [
+    "div",
+    "Daily_Commute_km",
+    3
+   ],
+   [
+    "mod",
+    "Age",
+    23
+   ]
+  ],
+  "fit_mean": 0.010647836327693984,
+  "fit_min": 0.004316634372693993,
+  "n_keys": 10831,
+  "confirm": 0.013219614217505143
+ },
+ "evaluated": 222,
+ "seconds": 117.5,
+ "threshold": 0.012
+}

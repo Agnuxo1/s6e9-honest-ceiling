@@ -1,0 +1,154 @@
+{
+ "report": {
+  "gen": 964,
+  "evaluated": 11666,
+  "elapsed_min": 110.7,
+  "best_fit": 0.00695,
+  "best_min": 0.00317,
+  "best_prog": [
+   [
+    "digit",
+    "Annual_Income_USD",
+    100000
+   ],
+   [
+    "mod",
+    "Age",
+    12
+   ],
+   [
+    "digit",
+    "Charging_Stations_Near_Work",
+    1
+   ],
+   [
+    "pshift",
+    "Daily_Commute_km",
+    6,
+    8
+   ]
+  ],
+  "hall": 4,
+  "confirmed": 0
+ },
+ "null_mean": 3.2622954119769554e-05,
+ "null_std": 0.0017797001986003752,
+ "threshold": 0.012,
+ "hall": [
+  {
+   "program": [
+    [
+     "div",
+     "Charging_Stations_Near_Home",
+     5
+    ],
+    [
+     "mod",
+     "Age",
+     12
+    ],
+    [
+     "digit",
+     "Charging_Stations_Near_Work",
+     1
+    ],
+    [
+     "pshift",
+     "Daily_Commute_km",
+     6,
+     8
+    ]
+   ],
+   "fit_mean": 0.006411012377117918,
+   "fit_min": 0.0020471661213638994,
+   "n_keys": 2880,
+   "confirm_fold9": 0.005230426148269442
+  },
+  {
+   "program": [
+    [
+     "div",
+     "Environmental_Concern_Level",
+     3
+    ],
+    [
+     "mod",
+     "Age",
+     12
+    ],
+    [
+     "digit",
+     "Charging_Stations_Near_Work",
+     1
+    ],
+    [
+     "pshift",
+     "Daily_Commute_km",
+     6,
+     8
+    ]
+   ],
+   "fit_mean": 0.006020657428793982,
+   "fit_min": 0.000545942539605158,
+   "n_keys": 1920,
+   "confirm_fold9": 0.0043320042347672625
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     100000
+    ],
+    [
+     "mod",
+     "Age",
+     12
+    ],
+    [
+     "digit",
+     "Charging_Stations_Near_Work",
+     1
+    ],
+    [
+     "pshift",
+     "Daily_Commute_km",
+     6,
+     8
+    ]
+   ],
+   "fit_mean": 0.006945789464587748,
+   "fit_min": 0.0031658510553029397,
+   "n_keys": 1920,
+   "confirm_fold9": -4.249821173786315e-05
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     100000
+    ],
+    [
+     "mod",
+     "Age",
+     12
+    ],
+    [
+     "digit",
+     "Charging_Stations_Near_Work",
+     1
+    ],
+    [
+     "div",
+     "Daily_Commute_km",
+     250
+    ]
+   ],
+   "fit_mean": 0.006258782897159734,
+   "fit_min": 0.0021112337248511024,
+   "n_keys": 952,
+   "confirm_fold9": -0.0019566376461720545
+  }
+ ]
+}

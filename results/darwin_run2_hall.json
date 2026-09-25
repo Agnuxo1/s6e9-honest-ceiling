@@ -1,0 +1,681 @@
+{
+ "report": {
+  "gen": 4249,
+  "evaluated": 36013,
+  "elapsed_min": 218.2,
+  "best_fit": 0.00708,
+  "best_min": -0.00571,
+  "best_prog": [
+   [
+    "digit",
+    "Annual_Income_USD",
+    10
+   ],
+   [
+    "mod",
+    "Environmental_Concern_Level",
+    5000
+   ],
+   [
+    "mod",
+    "Charging_Stations_Near_Work",
+    8
+   ],
+   [
+    "div",
+    "Number_of_Cars_Owned",
+    3
+   ]
+  ],
+  "hall": 23,
+  "confirmed": 0
+ },
+ "null_mean": 0.00048545256385743366,
+ "null_std": 0.0020383278388130693,
+ "threshold": 0.012,
+ "hall": [
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     3
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     8
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006389706374825451,
+   "fit_min": 8.394871500921601e-05,
+   "n_keys": 720,
+   "confirm_fold9": 0.005239715752039458
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     5000
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     11
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     1024
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     10
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     9
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     6
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     29
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     5
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     100
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     250
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     101
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     50
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     23
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     2500
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     500
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     7
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     256
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     41
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     128
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     97
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "mod",
+     "Environmental_Concern_Level",
+     37
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  },
+  {
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     10
+    ],
+    [
+     "raw",
+     "Environmental_Concern_Level"
+    ],
+    [
+     "mod",
+     "Charging_Stations_Near_Work",
+     2
+    ],
+    [
+     "mod",
+     "Age",
+     3
+    ]
+   ],
+   "fit_mean": 0.006109836375022217,
+   "fit_min": 0.00025644120512913286,
+   "n_keys": 300,
+   "confirm_fold9": 0.0035201159064465327
+  }
+ ]
+}
