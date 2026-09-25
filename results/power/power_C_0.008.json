@@ -1,0 +1,24 @@
+{
+ "plant": "C",
+ "program": [
+  [
+   "mod",
+   "Daily_Commute_km",
+   37
+  ],
+  [
+   "mod",
+   "Age",
+   7
+  ]
+ ],
+ "effect": 0.008,
+ "n_groups": 259,
+ "oracle_auc_gain": 0.002066123887007998,
+ "planted_confirm_corr": 0.015347304443554727,
+ "detected": false,
+ "first_confirmed": null,
+ "evaluated": 5778,
+ "seconds": 1801.8,
+ "threshold": 0.011601618564475663
+}

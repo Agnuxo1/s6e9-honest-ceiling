@@ -1,7 +1,8 @@
 # Open research directions
 
-The Darwin-Cage search found no structure in the residual of the best honest blend, and its power analysis shows it
-would have found planted structures of a useful size **inside its search space**. That space is limited. This page
+The Darwin-Cage search found no structure in the residual of the best honest blend. Its power analysis shows that,
+inside its search space, it finds single-atom structures worth about 0.002 AUC and two-atom structures worth about
+0.005 AUC, and that it can miss a two-atom structure worth 0.002. That space and that power are limited. This page
 lists what lies outside it, each as a hypothesis with a concrete, falsifiable acceptance test. Contributions are
 welcome (see [CONTRIBUTING.md](CONTRIBUTING.md)); an honest improvement will be added to the results with credit.
 
@@ -68,7 +69,9 @@ must pass. Budget: about 20 GPU-hours on an RTX 3090.
 **Hypothesis.** The search spent its budget uniformly. With the power curve known, a sequential design (spend more
 evaluations near programs whose search fitness is high but confirmation is not yet tested) lowers the minimum
 detectable effect.
-**Test.** Re-run the power analysis at the smallest missed effect and show detection with the same budget.
+**Evidence.** In the power analysis a two-atom, 259-group structure worth 0.0021 AUC was detectable (its true
+program scores 0.0153 on the reserved fold, threshold 0.012) but was not found in 30 minutes (5,778 programs).
+**Test.** Re-run `scripts/power_analysis.py --plant C --effect 0.008` and show detection with the same budget.
 
 ## Engineering items
 

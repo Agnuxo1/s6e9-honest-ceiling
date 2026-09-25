@@ -210,24 +210,35 @@ def fig_darwin(mode):
 def fig_power(mode):
     t = THEMES[mode]
     power = [json.load(open(f)) for f in sorted(glob.glob(str(RES / "power" / "*.json")))]
-    fig, ax = plt.subplots(figsize=(8.2, 3.7), facecolor=t["surface"])
+    thr = 0.012
+    fig, ax = plt.subplots(figsize=(8.6, 4.0), facecolor=t["surface"])
+    ax.axvspan(1e-4, 0.00085, color=t["neutral"], alpha=0.22, linewidth=0)
+    ax.text(0.00017, 1.33, "below resolution: even the true program\nfails 3σ on a 67k-row fold", color=t["text2"], fontsize=8.3, va="top")
     markers = {"A": ("o", t["s1"]), "B": ("s", t["s2"]), "C": ("D", t["s3"])}
     labels = {"A": "A: income mod 97 (97 groups)", "B": "B: income hundreds digit × city (30)", "C": "C: commute mod 37 × age mod 7 (259)"}
+    yoff = {"A": 0.09, "B": 0.0, "C": -0.09}
     for plant_id in ("A", "B", "C"):
         pp = sorted([p for p in power if p["plant"] == plant_id], key=lambda p: p["effect"])
         if not pp:
             continue
         m, c = markers[plant_id]
-        xs = [max(p["oracle_auc_gain"], 1e-6) for p in pp]
-        ys = [1 if p["detected"] else 0 for p in pp]
-        yoff = {"A": 0.06, "B": 0.0, "C": -0.06}[plant_id]
-        ax.plot(xs, np.array(ys) + yoff, m + "-", color=c, linewidth=2, markersize=8, markeredgecolor=t["surface"], markeredgewidth=1.5)
-        ax.text(xs[-1] * 1.12, ys[-1] + yoff, labels[plant_id], color=t["text"], fontsize=8.5, va="center")
+        xs = np.array([max(p["oracle_auc_gain"], 1e-6) for p in pp])
+        ys = np.array([1.0 if p["detected"] else 0.0 for p in pp]) + yoff[plant_id]
+        ax.plot(xs, ys, "-", color=c, linewidth=2, zorder=2)
+        for x, yv, p in zip(xs, ys, pp):
+            missed_detectable = (not p["detected"]) and p["planted_confirm_corr"] > thr
+            ax.plot([x], [yv], m, color=c, markersize=8.5, markeredgecolor=c if missed_detectable else t["surface"],
+                    markerfacecolor=t["surface"] if missed_detectable else c, markeredgewidth=2, zorder=3)
+            if missed_detectable:
+                ax.annotate("detectable but missed\n(two-atom, 30-min budget)", (x, yv), xytext=(x * 1.08, yv - 0.34), fontsize=8.2,
+                            color=t["text"], arrowprops=dict(arrowstyle="-", color=t["text2"], lw=0.8))
+        ax.text(xs[-1] * 1.1, ys[-1], labels[plant_id], color=t["text"], fontsize=8.5, va="center")
     ax.set_xscale("log")
+    ax.set_xlim(1.5e-4, 0.03)
     ax.set_yticks([0, 1], ["missed", "found"])
-    ax.set_ylim(-0.4, 1.4)
+    ax.set_ylim(-0.55, 1.4)
     ax.set_xlabel("AUC an oracle would gain from the planted structure (log scale)")
-    style(ax, t, "Power analysis: how large a hidden structure the search can find",
+    style(ax, t, "Power analysis: what the search can and cannot find",
           "labels drawn from the real calibrated probabilities plus a planted per-group shift; 30-minute budget per run")
     save(fig, "power", mode)
 
