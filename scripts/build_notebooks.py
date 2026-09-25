@@ -319,7 +319,7 @@ for h in found["confirmed"][:3]:
     print("  ", h["program"], "reserved-fold correlation", round(h["confirm"], 4))
 '''),
         code('''
-rows = [json.load(open(f)) for f in sorted(glob.glob(str(LIB / "power_*.json")))]
+rows = [json.load(open(f)) for f in sorted(glob.glob(str(LIB / "power_[ABC]_*.json")))]
 tab = pd.DataFrame([{"plant": r_["plant"], "groups": r_["n_groups"], "effect d": r_["effect"], "oracle AUC gain": r_["oracle_auc_gain"],
                      "found": r_["detected"], "programs": r_["evaluated"]} for r_ in rows])
 print(tab.sort_values(["plant", "effect d"]).to_string(index=False))
