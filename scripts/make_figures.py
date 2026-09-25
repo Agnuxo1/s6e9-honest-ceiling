@@ -64,7 +64,7 @@ def fig_leaderboard(mode):
     for x, lab, dy, ha in ((0.94659, "our public anchor\n0.94659 (rank 28)", 42, "left"), (0.94638, "our honest blend\n0.94638 (v4)", 42, "left")):
         ax.axvline(x, color=t["text2"], linewidth=1, linestyle=(0, (3, 3)))
         ax.text(x + 0.0000012, dy, lab, color=t["text2"], fontsize=8.5, va="bottom", ha=ha)
-    ax.text(0.99, 0.95, "rank 1 at 0.94945 is off this scale\n(public-split probing; see report)", transform=ax.transAxes,
+    ax.text(0.99, 0.95, "rank 1 at 0.94945 is off this scale\n(no published method; see report)", transform=ax.transAxes,
             ha="right", va="top", color=t["text2"], fontsize=8.5)
     ax.set_ylim(0, 78)
     ax.set_xlabel("public ROC-AUC (top 200 teams, 2026-09-24)")

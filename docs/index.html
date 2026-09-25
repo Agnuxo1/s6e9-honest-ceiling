@@ -116,7 +116,7 @@ footer{padding:36px 0 60px;border-top:1px solid var(--line);color:var(--muted);f
   <h2>Why every top score looks the same</h2>
   <p>The public top 200 is packed into 0.0003 of AUC. One positive row of the 57k-row public split is worth about 0.00002, so ranks 2 to 28 differ by roughly eight rows. The label is the generator's purchase recipe plus an independent random draw per row. The only extra signal is that the generator copied incomes from a 10,000-row original table, so an exact income value partially identifies an original row. Once a model target-encodes that identity, nothing learnable remains.</p>
   <figure class="fig"><picture><source media="(prefers-color-scheme: dark)" srcset="figures/leaderboard_dark.png"><img src="figures/leaderboard_light.png" alt="Histogram of the public top-200 scores" loading="lazy"></picture>
-  <figcaption>The first-placed public score (0.94945) is widely attributed to reading the public split with paired submissions; by construction that does not transfer to the private 80 %.</figcaption></figure>
+  <figcaption>The first-placed public score (0.94945) has no published method; <a href="https://www.kaggle.com/code/megayak/s6e9-0-94656-reading-the-public-split">paired submissions can read the public split</a>, and gains of that kind do not transfer to the private 80 %.</figcaption></figure>
   <figure class="fig"><picture><source media="(prefers-color-scheme: dark)" srcset="figures/ceiling_dark.png"><img src="figures/ceiling_light.png" alt="AUC ladder and distance to the oracle bound" loading="lazy"></picture>
   <figcaption>From the untrained recipe (0.9377) to the nested blend (0.94642): the last step sits inside the sampling error of its own oracle bound.</figcaption></figure>
 </div></section>
