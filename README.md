@@ -42,8 +42,10 @@ The public top 200 is packed into 0.0003 of AUC. One positive row of the 57k-row
 0.00002, so ranks 2 to 28 differ by roughly eight rows. The label is the generator's purchase recipe plus an
 independent random draw per row; the only extra signal is that the generator copied incomes from a 10,000-row
 original table, so an exact income value partially identifies an original row. Once a model target-encodes that
-identity, nothing learnable remains. The first-placed public score (0.94945) is widely attributed to reading the
-public split with paired submissions, which by construction does not transfer to the private 80 %.
+identity, nothing learnable remains. The first-placed public score (0.94945) comes with no published method. The
+public discussion ([*Is there a leak?*](https://www.kaggle.com/competitions/playground-series-s6e9/discussion)) and
+[megayak's notebook](https://www.kaggle.com/code/megayak/s6e9-0-94656-reading-the-public-split) showing that paired
+submissions can read the public split suggest public-split information; such gains do not transfer to the private 80 %.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/leaderboard_dark.png">

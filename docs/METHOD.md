@@ -45,7 +45,7 @@ encoded from the other four inner folds, and the outer-validation and test rows 
 
 | Leg | Configuration | OOF AUC (per run) |
 |---|---|---|
-| XGBoost | depth 6, lr 0.02, colsample 0.25, hist, CUDA; early stopping on 10 % of outer-train | 0.94604-0.94607 |
+| XGBoost | depth 6, lr 0.02, colsample 0.25, hist, CUDA; early stopping on 10 % of outer-train | 0.94603-0.94607 |
 | LightGBM | 32 leaves, depth 6, lr 0.02, feature fraction 0.35 | 0.94606-0.94608 |
 | Logistic regression | logit-TE + one-hot + splines, L2, C = 0.5 | 0.94580 |
 | MLP (PyTorch) | 512-256-128 SiLU, quantile-normal inputs | 0.94466-0.94502 |
@@ -56,19 +56,26 @@ averaged in rank space. Averaging is worth about +0.00017 per family: XGBoost 0.
 9-run average, LightGBM 0.94607 → **0.946241**. Per-run reports: [`results/legs.json`](../results/legs.json), family
 averages: [`results/legs_summary.json`](../results/legs_summary.json).
 
-## 5. Ablations (outer folds 0-2, XGBoost)
+## 5. Ablations (outer folds 0-2, XGBoost, mean Δ AUC over the three folds)
 
-| Change | Mean Δ AUC vs first run | Decision |
-|---|---|---|
-| drop exact-income × recipe-cell encodings | +0.00012 | adopted |
-| … and colsample 0.25 | +0.00015 | adopted (final configuration) |
-| drop original-table lookups | 0.00000 | kept (neutral, used by other views) |
-| priors × 10 | −0.00009 | rejected |
-| depth 8, lr 0.01 | −0.00005 | rejected |
-| drop in-fold key counts | −0.00007 | rejected |
-| centred-window target rates | 0.00000 | rejected |
-| income × city / car / home-charging encodings | −0.00001 to −0.00008 | rejected |
-| no exact-income key, granularity ladder (different view) | −0.00050 | kept as a candidate leg; zero blend weight |
+Reference **B** = the first run with all 74 features; reference **F** = the final configuration (B without the
+exact-income × recipe-cell encodings, colsample 0.25).
+
+| Change | Reference | Mean Δ AUC | Decision |
+|---|---|---|---|
+| drop exact-income × recipe-cell encodings | B | +0.00012 | adopted |
+| … and colsample 0.25 (= F) | B | +0.00015 | adopted (final configuration) |
+| LightGBM, drop exact-income × recipe-cell encodings | LightGBM B | +0.00014 | adopted |
+| drop original-table lookups | B | −0.00001 | kept (near-neutral) |
+| priors × 10 | B | −0.00009 | rejected |
+| depth 8, lr 0.01 | B | −0.00005 | rejected |
+| depth 5, lr 0.03 | B | +0.00002 | not adopted (within noise) |
+| drop in-fold key counts | B | −0.00007 | rejected |
+| centred-window target rates | B | −0.00000 | rejected |
+| + income × city encoding | F | −0.00001 | rejected |
+| + income × car-type / home-charging encodings | F | −0.00006 | rejected |
+| + five income × column encodings | F | −0.00008 | rejected |
+| no exact-income key, granularity ladder (different view) | B | −0.00034 | kept as a candidate leg; zero blend weight |
 
 Raw fold AUCs: [`results/ablations.json`](../results/ablations.json).
 
@@ -90,9 +97,10 @@ fold; that nested AUC is the number we report. Final weights (refit on all rows)
 
 A difference measured on 668,665 rows can vanish on the 229,257 private rows. `blend.paired_bootstrap` draws 60
 subsamples of that size and scores both vectors on the *same* rows, which is how the private leaderboard compares
-teams. v4 beats the public six-view ensemble by +0.000073 ± 0.000016 (P = 1.00) and v2 by +0.000023 ± 0.000006
-(P = 1.00). At public-split size (57,314 rows) the v4-v2 difference is +0.000023 ± 0.000012: the public
-leaderboard, which showed v4 0.00003 *below* v2, cannot resolve it.
+teams. v4 beats the public six-view ensemble by +0.000073 ± 0.000016 (P = 1.00) and v2 by +0.000023 ± 0.000005
+(P = 1.00). At public-split size (57,314 rows) the v4-v2 difference is +0.000023 ± 0.000013 (P = 0.95): the
+public leaderboard, which showed v4 0.00003 *below* v2, cannot resolve it. All four comparisons are stored in
+[`results/residual_and_ceiling.json`](../results/residual_and_ceiling.json).
 
 ## 8. What is left: residual analysis
 
