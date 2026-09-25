@@ -29,7 +29,7 @@ analysis of that search, and every number behind the claims.
 
 The honest blend sits within the sampling error of its own oracle bound. The residual behaves like independent
 coin flips, and an unconstrained search over 47,679 feature programs found nothing that survives a fold it never
-saw. The power analysis shows the search *does* find planted structures of the size that would matter.
+saw. The power analysis shows the search finds planted structures worth about 0.002-0.005 AUC, and where its limits are.
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/ceiling_dark.png">
@@ -124,7 +124,10 @@ only if its correlation there exceeds 3σ of the null (0.012 for 66,866 rows).
   0.0052 (z ≈ 1.3). Every entry that looked strong on the search folds collapsed on the reserved fold, which is the
   signature of multiple testing on white noise.
 * Power analysis: labels are redrawn from the real calibrated probabilities plus a planted per-group shift of known
-  size, and the same search runs with the same budget. Results: [`results/power/`](results/power) and the figure below.
+  size, and the same search runs for 30 minutes. It finds planted single-atom structures worth about 0.002 AUC in
+  34 s to 4 min and a two-atom structure worth 0.005 AUC in 2 min; it **missed** a two-atom structure worth 0.002 AUC
+  that was detectable in principle. Structures worth ≤ 0.0008 AUC cannot be confirmed on a 67k-row fold by any
+  method. Full table: [docs/METHOD.md §10](docs/METHOD.md#10-power-analysis), data: [`results/power_summary.json`](results/power_summary.json).
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="figures/darwin_dark.png">

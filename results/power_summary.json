@@ -1,0 +1,168 @@
+{
+ "threshold": 0.012,
+ "budget_minutes": 30,
+ "runs": [
+  {
+   "plant": "A",
+   "program": [
+    [
+     "mod",
+     "Annual_Income_USD",
+     97
+    ]
+   ],
+   "groups": 97,
+   "effect": 0.002,
+   "oracle_auc_gain": 0.000201,
+   "true_program_confirm": 0.0043,
+   "detectable_in_principle": false,
+   "found": false,
+   "programs_evaluated": 4688,
+   "seconds": 1802
+  },
+  {
+   "plant": "A",
+   "program": [
+    [
+     "mod",
+     "Annual_Income_USD",
+     97
+    ]
+   ],
+   "groups": 97,
+   "effect": 0.004,
+   "oracle_auc_gain": 0.000662,
+   "true_program_confirm": 0.01,
+   "detectable_in_principle": false,
+   "found": false,
+   "programs_evaluated": 4632,
+   "seconds": 1803
+  },
+  {
+   "plant": "A",
+   "program": [
+    [
+     "mod",
+     "Annual_Income_USD",
+     97
+    ]
+   ],
+   "groups": 97,
+   "effect": 0.008,
+   "oracle_auc_gain": 0.001879,
+   "true_program_confirm": 0.0197,
+   "detectable_in_principle": true,
+   "found": true,
+   "programs_evaluated": 785,
+   "seconds": 235
+  },
+  {
+   "plant": "A",
+   "program": [
+    [
+     "mod",
+     "Annual_Income_USD",
+     97
+    ]
+   ],
+   "groups": 97,
+   "effect": 0.016,
+   "oracle_auc_gain": 0.004882,
+   "true_program_confirm": 0.0427,
+   "detectable_in_principle": true,
+   "found": true,
+   "programs_evaluated": 57,
+   "seconds": 35
+  },
+  {
+   "plant": "B",
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     100
+    ],
+    [
+     "cat",
+     "City_Type"
+    ]
+   ],
+   "groups": 30,
+   "effect": 0.004,
+   "oracle_auc_gain": 0.000768,
+   "true_program_confirm": 0.0079,
+   "detectable_in_principle": false,
+   "found": false,
+   "programs_evaluated": 5890,
+   "seconds": 1802
+  },
+  {
+   "plant": "B",
+   "program": [
+    [
+     "digit",
+     "Annual_Income_USD",
+     100
+    ],
+    [
+     "cat",
+     "City_Type"
+    ]
+   ],
+   "groups": 30,
+   "effect": 0.008,
+   "oracle_auc_gain": 0.002123,
+   "true_program_confirm": 0.0187,
+   "detectable_in_principle": true,
+   "found": true,
+   "programs_evaluated": 57,
+   "seconds": 34
+  },
+  {
+   "plant": "C",
+   "program": [
+    [
+     "mod",
+     "Daily_Commute_km",
+     37
+    ],
+    [
+     "mod",
+     "Age",
+     7
+    ]
+   ],
+   "groups": 259,
+   "effect": 0.008,
+   "oracle_auc_gain": 0.002066,
+   "true_program_confirm": 0.0153,
+   "detectable_in_principle": true,
+   "found": false,
+   "programs_evaluated": 5778,
+   "seconds": 1802
+  },
+  {
+   "plant": "C",
+   "program": [
+    [
+     "mod",
+     "Daily_Commute_km",
+     37
+    ],
+    [
+     "mod",
+     "Age",
+     7
+    ]
+   ],
+   "groups": 259,
+   "effect": 0.016,
+   "oracle_auc_gain": 0.004808,
+   "true_program_confirm": 0.039,
+   "detectable_in_principle": true,
+   "found": true,
+   "programs_evaluated": 222,
+   "seconds": 118
+  }
+ ]
+}

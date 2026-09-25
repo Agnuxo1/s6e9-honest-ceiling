@@ -121,7 +121,7 @@ rep = train_leg(X, K, y, len(train), len(test), "leg_xgb_s42", model="xgb", seed
 print(f"OOF AUC {rep['oof_auc']:.6f} in {time.time()-t0:.0f} s")
 published = json.load(open(LIB / "legs.json"))["final_xgb_s42"]
 print("published run   ", round(published["oof_auc"], 6))
-print("per-fold difference vs published (GPU histograms are not bit-exact):",
+print("per-fold difference vs published (published run used CUDA; histogram construction differs between devices):",
       np.round(np.array(rep["fold_aucs"]) - np.array(published["fold_aucs"]), 6))
 '''),
         md("""

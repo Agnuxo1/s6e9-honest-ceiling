@@ -140,3 +140,26 @@ same search on r′ = y′ − p with a 30-minute budget. For each (program, d) 
 and the AUC an oracle would gain by knowing the planted structure, AUC(y′, p + d·s) − AUC(y′, p). The search counts
 as successful if it confirms the planted key or any finer key that contains it (for example, the exact income
 contains income mod 97). Results: [`results/power/`](../results/power).
+
+| Planted structure | Groups | Effect d | Oracle AUC gain | True program on reserved fold | Found in 30 min |
+|---|---|---|---|---|---|
+| A: income mod 97 | 97 | 0.002 | 0.0002 | 0.0043 (fails 0.012) | no (below resolution) |
+| A: income mod 97 | 97 | 0.004 | 0.0007 | 0.0100 (fails 0.012) | no (below resolution) |
+| A: income mod 97 | 97 | 0.008 | 0.0019 | 0.0197 (passes 0.012) | **yes** (235 s) |
+| A: income mod 97 | 97 | 0.016 | 0.0049 | 0.0427 (passes 0.012) | **yes** (35 s) |
+| B: income hundreds digit × city | 30 | 0.004 | 0.0008 | 0.0079 (fails 0.012) | no (below resolution) |
+| B: income hundreds digit × city | 30 | 0.008 | 0.0021 | 0.0187 (passes 0.012) | **yes** (34 s) |
+| C: commute mod 37 × age mod 7 | 259 | 0.008 | 0.0021 | 0.0153 (passes 0.012) | **no** (search miss) |
+| C: commute mod 37 × age mod 7 | 259 | 0.016 | 0.0048 | 0.0390 (passes 0.012) | **yes** (118 s) |
+
+Reading the table:
+
+* **Resolution limit.** Structures worth ≤ 0.0008 AUC are below what a 66,866-row confirmation fold can resolve:
+  even the true planted program does not clear 3σ there. No honest method could confirm them on this data.
+* **Single-atom and coarse structures worth ≈ 0.002 AUC are found**, in 34 s to 4 min.
+* **Search limit.** The two-atom, 259-group structure worth 0.0021 AUC was detectable (its true program scores 0.0153)
+  but was *not* found within 30 minutes; at 0.0048 AUC it was found in 2 minutes. On the real residual the search ran
+  for 5.5 hours (47,679 programs, versus about 5,800 per 30-minute power run), so deeper structures had far more
+  budget there, but the power analysis only certifies what it tested: single-atom structures down to ≈ 0.002 AUC and
+  two-atom structures down to ≈ 0.005 AUC.
+

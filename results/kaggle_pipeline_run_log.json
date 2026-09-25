@@ -1,0 +1,244 @@
+[{"stream_name":"stderr","time":13.092584606,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":13.092676168,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":13.092683584,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":13.092697897,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stderr","time":14.112292765,"data":"0.00s - Debugger warning: It seems that frozen modules are being used, which may\n"}
+,{"stream_name":"stderr","time":14.112330063,"data":"0.00s - make the debugger miss breakpoints. Please pass -Xfrozen_modules=off\n"}
+,{"stream_name":"stderr","time":14.112335563,"data":"0.00s - to python to disable frozen modules.\n"}
+,{"stream_name":"stderr","time":14.112339813,"data":"0.00s - Note: Debugging will proceed. Set PYDEVD_DISABLE_FILE_VALIDATION=1 to disable this validation.\n"}
+,{"stream_name":"stdout","time":24.855649066,"data":"honest_ceiling 1.0.0 | competition data: /kaggle/input/playground-series-s6e9 | library: /kaggle/input/s6e9-honest-ceiling-oof-library\n"}
+,{"stream_name":"stdout","time":26.821013433,"data":"train (668665, 15)  test (286571, 14)  positives 0.1746\n"}
+,{"stream_name":"stdout","time":28.158233242,"data":"fold ids identical to the published library for all 668665 rows\n"}
+,{"stream_name":"stdout","time":28.15827711,"data":"{0: 66867, 1: 66867, 2: 66867, 3: 66867, 4: 66867, 5: 66866, 6: 66866, 7: 66866, 8: 66866, 9: 66866}\n"}
+,{"stream_name":"stdout","time":37.014365412,"data":"unsupervised features: 43 | integer keys: 12\n"}
+,{"stream_name":"stdout","time":37.084031089,"data":"AUC of the income encoding against shuffled labels (0.5 = no leakage): 0.4997\n"}
+,{"stream_name":"stderr","time":39.734076018,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:50:46] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":39.734117074,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":39.734122719,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:50:46] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":39.734129927,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":39.734134707,"data":"\n"}
+,{"stream_name":"stderr","time":39.735917684,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:50:46] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":39.735972953,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":39.735979698,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:50:46] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":39.735985918,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":40.447871314,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:50:47] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":40.447913406,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":40.447919647,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:50:47] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":40.447949612,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":40.447953624,"data":"\n"}
+,{"stream_name":"stderr","time":40.447957477,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:50:47] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":40.44796164,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":40.447965299,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:50:47] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":40.447968938,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stdout","time":206.874512583,"data":"{\"fold\": 0, \"auc\": 0.944947, \"best_iter\": 1626, \"sec\": 169.6}\n"}
+,{"stream_name":"stderr","time":208.75531828,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:53:35] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":208.755359399,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":208.75536533,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:53:35] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":208.755372274,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":208.755377123,"data":"\n"}
+,{"stream_name":"stderr","time":208.757026999,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:53:35] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":208.757065761,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":208.757071364,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:53:35] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":208.757077102,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":209.39834851,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:53:36] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":209.398389564,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":209.398396222,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:53:36] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":209.398402484,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":209.398415946,"data":"\n"}
+,{"stream_name":"stderr","time":209.398420524,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:53:36] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":209.398447674,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":209.398452139,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:53:36] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":209.39845708000001,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stdout","time":342.862369974,"data":"{\"fold\": 1, \"auc\": 0.9452, \"best_iter\": 1212, \"sec\": 136.0}\n"}
+,{"stream_name":"stderr","time":344.729956328,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:55:51] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":344.729996048,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":344.730001745,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:55:51] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":344.73000852,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":344.73001388,"data":"\n"}
+,{"stream_name":"stderr","time":344.731035997,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:55:51] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":344.731048364,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":344.731053532,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:55:51] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":344.731059596,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":345.393494031,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:55:52] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":345.393624256,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":345.393633152,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:55:52] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":345.393641059,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":345.393646283,"data":"\n"}
+,{"stream_name":"stderr","time":345.393651231,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:55:52] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":345.393656888,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":345.393661735,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:55:52] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":345.393667271,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stdout","time":472.186836541,"data":"{\"fold\": 2, \"auc\": 0.945427, \"best_iter\": 1128, \"sec\": 129.3}\n"}
+,{"stream_name":"stderr","time":474.142935874,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:58:01] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":474.142978026,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":474.142982918,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:58:01] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":474.142989221,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":474.142993157,"data":"\n"}
+,{"stream_name":"stderr","time":474.143433894,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:58:01] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":474.143440617,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":474.143444726,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [09:58:01] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":474.143449135,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":474.818666391,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:58:01] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":474.818760446,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":474.818767167,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:58:01] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":474.818773732,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":474.818777757,"data":"\n"}
+,{"stream_name":"stderr","time":474.818782048,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:58:01] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":474.818786562,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":474.818790723,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [09:58:01] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":474.818795592,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stdout","time":620.620937517,"data":"{\"fold\": 3, \"auc\": 0.946041, \"best_iter\": 1368, \"sec\": 148.4}\n"}
+,{"stream_name":"stderr","time":622.562402409,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:00:29] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":622.563891351,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":622.563913839,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:00:29] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":622.563964299,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":622.563968841,"data":"\n"}
+,{"stream_name":"stderr","time":622.565055068,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:00:29] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":622.5650738,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":622.5650782,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:00:29] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":622.565083408,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":623.231833235,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:00:30] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":623.231886881,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":623.231892768,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:00:30] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":623.231897308,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":623.231901108,"data":"\n"}
+,{"stream_name":"stderr","time":623.234079034,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:00:30] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":623.234116395,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":623.234121624,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:00:30] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":623.234126696,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stdout","time":753.619998392,"data":"{\"fold\": 4, \"auc\": 0.946815, \"best_iter\": 1174, \"sec\": 133.0}\n"}
+,{"stream_name":"stderr","time":755.496903838,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:02:42] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":755.496944956,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":755.496950759,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:02:42] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":755.496956955,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":755.496962027,"data":"\n"}
+,{"stream_name":"stderr","time":755.496967219,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:02:42] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":755.496972633,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":755.496977246,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:02:42] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":755.497002199,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":756.138020362,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:02:43] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":756.138062918,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":756.138068567,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:02:43] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":756.138073997,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":756.138078279,"data":"\n"}
+,{"stream_name":"stderr","time":756.139107509,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:02:43] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":756.139166344,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":756.139172725,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:02:43] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":756.139179665,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stdout","time":872.799874695,"data":"{\"fold\": 5, \"auc\": 0.947196, \"best_iter\": 1066, \"sec\": 119.2}\n"}
+,{"stream_name":"stderr","time":874.606571401,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:04:41] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":874.606613212,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":874.606618904,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:04:41] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":874.606629129,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":874.606633913,"data":"\n"}
+,{"stream_name":"stderr","time":874.609044186,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:04:41] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":874.609073421,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":874.609079099,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:04:41] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":874.609084612,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":875.238645537,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:04:42] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":875.238694494,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":875.238719843,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:04:42] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":875.238727358,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":875.238731535,"data":"\n"}
+,{"stream_name":"stderr","time":875.240045938,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:04:42] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":875.24007679,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":875.240081803,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:04:42] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":875.240086512,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stdout","time":982.113002547,"data":"{\"fold\": 6, \"auc\": 0.945898, \"best_iter\": 973, \"sec\": 109.3}\n"}
+,{"stream_name":"stderr","time":983.873527388,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:06:30] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":983.873569746,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":983.873575732,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:06:30] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":983.873583916,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":983.873589027,"data":"\n"}
+,{"stream_name":"stderr","time":983.876076219,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:06:30] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":983.876111957,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":983.876118805,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:06:30] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":983.876124848,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":984.505683837,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:06:31] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":984.505726364,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":984.505733691,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:06:31] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":984.505739693,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":984.505744716,"data":"\n"}
+,{"stream_name":"stderr","time":984.508095736,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:06:31] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":984.508159199,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":984.508165402,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:06:31] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":984.508170707,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stdout","time":1131.333432229,"data":"{\"fold\": 7, \"auc\": 0.946841, \"best_iter\": 1459, \"sec\": 149.2}\n"}
+,{"stream_name":"stderr","time":1133.127031785,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:09:00] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":1133.127073243,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":1133.12707906,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:09:00] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":1133.127085653,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":1133.127091228,"data":"\n"}
+,{"stream_name":"stderr","time":1133.127095893,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:09:00] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":1133.12710116,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":1133.127105722,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:09:00] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":1133.127111022,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":1133.785364182,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:09:00] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":1133.785430071,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":1133.785438212,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:09:00] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":1133.7854454,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":1133.785450788,"data":"\n"}
+,{"stream_name":"stderr","time":1133.785455523,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:09:00] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":1133.785461045,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":1133.785465982,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:09:00] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":1133.785471978,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stdout","time":1266.620481346,"data":"{\"fold\": 8, \"auc\": 0.947113, \"best_iter\": 1290, \"sec\": 135.3}\n"}
+,{"stream_name":"stderr","time":1268.411943699,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:11:15] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":1268.41198236,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":1268.411987857,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:11:15] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":1268.411994474,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":1268.411999237,"data":"\n"}
+,{"stream_name":"stderr","time":1268.414054358,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:11:15] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":1268.414077529,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":1268.414082949,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/training.py:200: UserWarning: [10:11:15] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":1268.414106358,"data":"  bst.update(dtrain, iteration=i, fobj=obj)\n"}
+,{"stream_name":"stderr","time":1269.041661374,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:11:16] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":1269.041701252,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":1269.041708211,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:11:16] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":1269.041714695,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":1269.041719697,"data":"\n"}
+,{"stream_name":"stderr","time":1269.041724753,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:11:16] WARNING: /__w/xgboost/xgboost/src/context.cc:53: No visible GPU is found, setting device to CPU.\n"}
+,{"stream_name":"stderr","time":1269.041730421,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stderr","time":1269.041735375,"data":"/usr/local/lib/python3.12/dist-packages/xgboost/callback.py:385: UserWarning: [10:11:16] WARNING: /__w/xgboost/xgboost/src/context.cc:207: Device is changed from GPU to CPU as we couldn't find any available GPU on the system.\n"}
+,{"stream_name":"stderr","time":1269.041740997,"data":"  self.starting_round = model.num_boosted_rounds()\n"}
+,{"stream_name":"stdout","time":1401.690763987,"data":"{\"fold\": 9, \"auc\": 0.945137, \"best_iter\": 1290, \"sec\": 135.1}\n"}
+,{"stream_name":"stdout","time":1401.963710604,"data":"OOF AUC 0.946056 in 1365 s\n"}
+,{"stream_name":"stdout","time":1401.963752004,"data":"published run    0.946065\n"}
+,{"stream_name":"stdout","time":1401.963758539,"data":"per-fold difference vs published (GPU histograms are not bit-exact): [-1.01e-04  3.00e-06 -4.40e-05 -8.70e-05  5.50e-05 -3.40e-05 -1.90e-05\n"}
+,{"stream_name":"stdout","time":1401.963764147,"data":"  5.00e-06  8.00e-05  5.60e-05]\n"}
+,{"stream_name":"stdout","time":1402.142709958,"data":"XGBoost: mean single-run OOF 0.946056  -\u003e  9-run rank average 0.946234\n"}
+,{"stream_name":"stdout","time":1402.282557902,"data":"LightGBM: mean single-run OOF 0.946070  -\u003e  9-run rank average 0.946241\n"}
+,{"stream_name":"stdout","time":2371.648445425,"data":"nested OOF AUC 0.946420   (in-sample 0.946424)   965 s\n"}
+,{"stream_name":"stdout","time":2371.648493633,"data":"six:A            0.282\n"}
+,{"stream_name":"stdout","time":2371.648500849,"data":"lgbm_x9          0.254\n"}
+,{"stream_name":"stdout","time":2371.648506012,"data":"six:G_realmlp    0.225\n"}
+,{"stream_name":"stdout","time":2371.648510873,"data":"six:D            0.169\n"}
+,{"stream_name":"stdout","time":2371.648515749,"data":"xgb_x9           0.028\n"}
+,{"stream_name":"stdout","time":2371.648521014,"data":"six:F            0.028\n"}
+,{"stream_name":"stdout","time":2371.648525884,"data":"six:C            0.014\n"}
+,{"stream_name":"stdout","time":2371.648530603,"data":"logreg_x1        0.000\n"}
+,{"stream_name":"stdout","time":2371.648535321,"data":"mlp_x2           0.000\n"}
+,{"stream_name":"stdout","time":2371.648540329,"data":"realmlp_x1       0.000\n"}
+,{"stream_name":"stdout","time":2371.648545171,"data":"ladderxgb_x1     0.000\n"}
+,{"stream_name":"stdout","time":2371.648549822,"data":"six:B            0.000\n"}
+,{"stream_name":"stdout","time":2371.648554404,"data":"six:E            0.000\n"}
+,{"stream_name":"stdout","time":2376.528344443,"data":"private-size gain +0.000072 ± 0.000016   P(better) 1.00\n"}
+,{"stream_name":"stdout","time":2377.246920586,"data":"public-size  gain +0.000075 ± 0.000038   P(better) 0.97\n"}
+,{"stream_name":"stdout","time":2380.340872288,"data":"       id  Will_Buy_EV\n"}
+,{"stream_name":"stdout","time":2380.340978865,"data":"0  668665     0.566108\n"}
+,{"stream_name":"stdout","time":2380.340986643,"data":"1  668666     0.486396\n"}
+,{"stream_name":"stdout","time":2380.340990411,"data":"2  668667     0.302292\n"}
+,{"stream_name":"stdout","time":2380.3409939,"data":"3  668668     0.249680\n"}
+,{"stream_name":"stdout","time":2380.340997091,"data":"4  668669     0.560238 \n"}
+,{"stream_name":"stdout","time":2380.341000498,"data":"Spearman with the published v4 file: 1.0\n"}
+,{"stream_name":"stderr","time":2384.84991768,"data":"/usr/local/lib/python3.12/dist-packages/mistune.py:435: SyntaxWarning: invalid escape sequence '\\|'\n"}
+,{"stream_name":"stderr","time":2384.84997172,"data":"  cells[i][c] = re.sub('\\\\\\\\\\|', '|', cell)\n"}
+,{"stream_name":"stderr","time":2385.130099401,"data":"/usr/local/lib/python3.12/dist-packages/nbconvert/filters/filter_links.py:36: SyntaxWarning: invalid escape sequence '\\_'\n"}
+,{"stream_name":"stderr","time":2385.13014386,"data":"  text = re.sub(r'_', '\\_', text) # Escape underscores in display text\n"}
+,{"stream_name":"stderr","time":2386.136255424,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to notebook\n"}
+,{"stream_name":"stderr","time":2386.562179199,"data":"[NbConvertApp] Writing 69267 bytes to __notebook__.ipynb\n"}
+,{"stream_name":"stderr","time":2389.962999549,"data":"[NbConvertApp] Converting notebook __notebook__.ipynb to html\n"}
+,{"stream_name":"stderr","time":2391.190407453,"data":"[NbConvertApp] Support files will be in __results___files/\n"}
+,{"stream_name":"stderr","time":2391.190452355,"data":"[NbConvertApp] Making directory __results___files\n"}
+,{"stream_name":"stderr","time":2391.191096266,"data":"[NbConvertApp] Writing 342430 bytes to __results__.html\n"}
+]

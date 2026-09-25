@@ -1,0 +1,23 @@
+{
+ "plant": "B",
+ "program": [
+  [
+   "digit",
+   "Annual_Income_USD",
+   100
+  ],
+  [
+   "cat",
+   "City_Type"
+  ]
+ ],
+ "effect": 0.004,
+ "n_groups": 30,
+ "oracle_auc_gain": 0.0007676869858382895,
+ "planted_confirm_corr": 0.007898270999457226,
+ "detected": false,
+ "first_confirmed": null,
+ "evaluated": 5890,
+ "seconds": 1802.0,
+ "threshold": 0.011601618564475663
+}
