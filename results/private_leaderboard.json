@@ -1,0 +1,27 @@
+{
+ "competition": "playground-series-s6e9",
+ "closed_utc": "2026-09-30T23:59:00Z",
+ "retrieved_utc": "2026-10-28T07:51:00Z",
+ "source": "Kaggle API GetLeaderboard (private) and the team's Submissions page",
+ "team": "Francisco Angulo de Lafuente",
+ "selected_submissions": [
+  56687025,
+  56696495
+ ],
+ "private_score": 0.9456,
+ "private_rank": 173,
+ "teams": 3576,
+ "best_private_among_our_40_submissions": 0.9456,
+ "field": {
+  "private_first": 0.94602,
+  "private_rank_100": 0.94564,
+  "private_rank_200": 0.94556,
+  "public_first_score": 0.94945,
+  "public_first_private_score": 0.94588,
+  "public_first_private_rank": 2,
+  "public_top28_private_rank_range": [
+   1,
+   214
+  ]
+ }
+}

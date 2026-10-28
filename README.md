@@ -26,6 +26,7 @@ analysis of that search, and every number behind the claims.
 | Paired gain at private-split size (229k rows, 60 subsamples) | +0.000073 ± 0.000016, P(better) = 1.00 | same file |
 | Darwin-Cage programs evaluated / confirmed on the reserved fold | 47,679 / **0** | [`results/darwin_run*_hall.json`](results) |
 | Public leaderboard, honest blend v4 | 0.94638 | [`results/submissions.json`](results/submissions.json) |
+| **Private leaderboard, final selection** | **0.94560**, rank **173 / 3,576** (top 5 %) | [`results/private_leaderboard.json`](results/private_leaderboard.json) |
 
 The honest blend sits within the sampling error of its own oracle bound. The residual behaves like independent
 coin flips, and an unconstrained search over 47,679 feature programs found nothing that survives a fold it never
@@ -51,6 +52,24 @@ submissions can read the public split suggest public-split information; such gai
   <source media="(prefers-color-scheme: dark)" srcset="figures/leaderboard_dark.png">
   <img alt="Histogram of the public top-200 scores" src="figures/leaderboard_light.png">
 </picture>
+
+## The private leaderboard confirmed the ceiling
+
+The competition closed on 30 September 2026. The private split (the other 80 % of the test rows) behaved as this
+analysis predicted:
+
+* **The whole field converged on the ceiling.** The private top 200 lies between 0.94556 and 0.94602, a range of
+  0.00046, which is about the width of the oracle interval above (± 0.00028).
+* **Public-split gains did not transfer.** The public leader (0.94945) scored 0.94588 on the private split. The other
+  teams in the public top 28 spread out between private ranks 1 and 214.
+* **Both selected files reached our best private score, 0.94560.** No other of our 40 submissions scored higher.
+  It is 0.00042 below first place and finished 173rd of 3,576 teams. The honest blend v4 scored 0.94545 privately.
+
+The two selected files are later blends than v4: v8 is a 50/50 rank blend of blend v6 (v4 with the LightGBM family
+extended to 15 runs) and a public Apache-2.0 generator-aware ridge GLM by heuljax, and v12 is a fixed logit-rank
+version of the same mix. Both were frozen before their confirmation checks and were scored only on out-of-fold data.
+The public GLM is third-party code and is not redistributed here.
+Every per-submission score is in [`results/submissions.json`](results/submissions.json).
 
 ## What is inside
 
