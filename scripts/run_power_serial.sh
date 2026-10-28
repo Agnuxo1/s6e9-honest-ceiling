@@ -1,7 +1,7 @@
 #!/bin/bash
 # Remaining power runs, one at a time (shared machine), after the two running ones finish.
-D=D:/PROJECTS/.cognition/s6e9-top1-20260923/data
-B=E:/Proyecto-concursos/S6E9/artifacts/fresh_family_20260924/hillclimb_v4_oof_nested.npy
+D=${DATA_DIR:?set DATA_DIR to the folder with train.csv, test.csv and the original table}
+B=${BLEND_OOF:?set BLEND_OOF to the nested blend OOF array (.npy)}
 while [ "$(powershell -NoProfile -Command "(Get-CimInstance Win32_Process -Filter \"name='python.exe'\" | Where-Object { \$_.CommandLine -like '*power_analysis*' }).Count")" != "0" ]; do sleep 60; done
 for spec in "A 0.008" "B 0.004" "C 0.008"; do
   set -- $spec

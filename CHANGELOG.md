@@ -1,8 +1,12 @@
 # Changelog
 
-## 1.0.0 — 2026-10-01
+## 1.0.0 — 2026-10-28
 
 First public release, after the close of Kaggle Playground S6E9.
+
+* Final private leaderboard: 0.94560, rank 173 / 3,576 (selected submissions v8 and v12); per-submission private
+  scores in `results/submissions.json`, field summary in `results/private_leaderboard.json`.
+* Power-analysis scripts read `DATA_DIR` and `BLEND_OOF` from the environment.
 
 * `honest_ceiling` package: shared outer split, unsupervised features, nested target encoding, fold-safe
   LightGBM/XGBoost legs, nested hill-climb, paired bootstrap, residual tests, oracle bound, Darwin-Cage search with a

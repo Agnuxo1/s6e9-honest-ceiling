@@ -2,23 +2,55 @@
  {
   "ref": 56479522,
   "file": "public anchor (rank-average of public CC0 files + rules)",
-  "public": 0.94659
+  "public": 0.94659,
+  "private": 0.9454,
+  "selected_for_final": false
  },
  {
   "ref": 56530246,
   "file": "fresh_family_blend_v2",
   "nested_oof": 0.946397,
-  "public": 0.94641
+  "public": 0.94641,
+  "private": 0.94545,
+  "selected_for_final": false
  },
  {
   "ref": 56530254,
   "file": "50/50 rank mix anchor + v2",
-  "public": 0.94653
+  "public": 0.94653,
+  "private": 0.94545,
+  "selected_for_final": false
  },
  {
   "ref": 56545770,
   "file": "fresh_family_blend_v4",
   "nested_oof": 0.9464195,
-  "public": 0.94638
+  "public": 0.94638,
+  "private": 0.94545,
+  "selected_for_final": false
+ },
+ {
+  "ref": 56574039,
+  "file": "fresh_family_blend_v6",
+  "description": "v4 streams with the LightGBM family extended to 15 runs; nested OOF 0.946425",
+  "public": 0.94637,
+  "private": 0.94545,
+  "selected_for_final": false
+ },
+ {
+  "ref": 56687025,
+  "file": "submission_v8_nested",
+  "description": "50/50 rank blend of v6 and the public Apache-2.0 generator-aware ridge GLM (heuljax); nested OOF 0.946598",
+  "public": 0.94665,
+  "private": 0.9456,
+  "selected_for_final": true
+ },
+ {
+  "ref": 56696495,
+  "file": "submission_v12_logistic_rank_blend",
+  "description": "fixed 50/50 logit(mid-rank v6) + logit(mid-rank refined GLM)",
+  "public": 0.94666,
+  "private": 0.9456,
+  "selected_for_final": true
  }
 ]
