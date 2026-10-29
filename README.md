@@ -16,6 +16,8 @@ This repository answers both questions for [Kaggle Playground Series S6E9](https
 evolutionary search that starts from noise and is rewarded only by structure it finds in the residual, a power
 analysis of that search, and every number behind the claims.
 
+**Contents** — [Results at a glance](#results-at-a-glance) · [Background](#background) · [Why every top score looks the same](#why-every-top-score-looks-the-same) · [The private leaderboard confirmed the ceiling](#the-private-leaderboard-confirmed-the-ceiling) · [What is inside](#what-is-inside) · [Quickstart](#quickstart) · [Method in one screen](#method-in-one-screen) · [The Darwin-Cage experiment](#the-darwin-cage-experiment) · [What did not help (measured, not assumed)](#what-did-not-help-measured-not-assumed) · [Open doors](#open-doors) · [Possible improvements](#possible-improvements) · [Real-world applications](#real-world-applications) · [Provenance and licences](#provenance-and-licences) · [Citation](#citation) · [Acknowledgements](#acknowledgements) · [Bibliography](#bibliography)
+
 ## Results at a glance
 
 | | Value | Evidence |
@@ -37,6 +39,27 @@ saw. The power analysis shows the search finds planted structures worth about 0.
   <img alt="AUC ladder from the generator recipe to the nested blend, and the distance to the oracle bound" src="figures/ceiling_light.png">
 </picture>
 
+## Background
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme/01-background-dark.gif"><img src="docs/readme/01-background.gif" alt="Animated timeline of the methods this pipeline builds on, from 1975 to the 2026 release" width="100%"></picture><br><sub>Animated figure A1 — Methods behind the pipeline, and the author's earlier work. Sources: bibliography below.</sub></p>
+
+Kaggle Playground Series tasks are synthetic tabular problems scored on a public and a private part of the test rows.
+How far repeated reuse of a held-out set overfits it has been analysed over more than one hundred Kaggle competitions [[1](#ref-1)]. In this
+competition the gap was visible: the first-placed public score (0.94945) was 0.94588 on the private split, while the
+private top 200 lay inside a range of 0.00046.
+
+The pipeline is built from established parts: gradient-boosted trees [[2](#ref-2), [3](#ref-3)]; smoothed target encoding of
+high-cardinality categorical columns [[4](#ref-4)] and empirical-Bayes shrinkage of group means [[5](#ref-5)]; a hill-climbing
+selection of ensemble members over a library of models [[6](#ref-6)]; and a paired bootstrap for the size of a gain
+[[7](#ref-7)]. What the repository adds is discipline about where each step may look. Target information that leaks into
+features is a classic way to overstate performance [[8](#ref-8)], and selecting a model on the same folds that report its
+score biases the estimate [[9](#ref-9)]; hence the single frozen split, the nested encoding and the nested blend. The
+Darwin-Cage search applies the same logic to feature discovery: a program counts as a discovery only if it clears a
+3σ threshold on a fold the search never saw, in the spirit of correcting for the number of candidates tested [[10](#ref-10)].
+
+The author has also published a separate public reservoir-computing framework [[11](#ref-11)]. The same nested-ensemble and
+residual-diagnostic workflow was later applied to another tabular task in a separate public repository [[12](#ref-12)].
+
 ## Why every top score looks the same
 
 The public top 200 is packed into 0.0003 of AUC. One positive row of the 57k-row public split is worth about
@@ -55,6 +78,8 @@ submissions can read the public split suggest public-split information; such gai
 
 ## The private leaderboard confirmed the ceiling
 
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme/02-private-leaderboard-dark.gif"><img src="docs/readme/02-private-leaderboard.gif" alt="Private leaderboard scores on a zoomed axis: our 0.94560 at rank 173, the private top 200 and the public leader" width="100%"></picture><br><sub>Animated figure A2 — Private scores after the close. Data: results/private_leaderboard.json.</sub></p>
+
 The competition closed on 30 September 2026. The private split (the other 80 % of the test rows) behaved as this
 analysis predicted:
 
@@ -72,6 +97,8 @@ The public GLM is third-party code and is not redistributed here.
 Every per-submission score is in [`results/submissions.json`](results/submissions.json).
 
 ## What is inside
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme/03-inside-dark.gif"><img src="docs/readme/03-inside.gif" alt="The six modules of the package in pipeline order, the command line on top of them and the supporting folders" width="100%"></picture><br><sub>Animated figure A3 — Schematic of the repository layout, following the file tree below.</sub></p>
 
 ```
 src/honest_ceiling/   installable package (pip install -e .)
@@ -109,9 +136,13 @@ honest-ceiling residual --data-dir data --scores work/blend_oof_nested.npy
 honest-ceiling darwin   --data-dir data --scores work/blend_oof_nested.npy --minutes 60
 ```
 
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme/04-quickstart-dark.gif"><img src="docs/readme/04-quickstart.gif" alt="Terminal showing the honest-ceiling help and a passing run of the seven offline tests" width="100%"></picture><br><sub>Animated figure A4 — A real offline run on a copy of the source: CLI help and the seven synthetic-data tests (about 14 s).</sub></p>
+
 Full reproduction, timings and hardware: [docs/REPRODUCE.md](docs/REPRODUCE.md).
 
 ## Method in one screen
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme/05-method-dark.gif"><img src="docs/readme/05-method.gif" alt="The five rules of the pipeline as five cards: frozen split, nested encoding, early stopping, averaging, nested blend" width="100%"></picture><br><sub>Animated figure A5 — The five rules in the list below, with the numbers they quote.</sub></p>
 
 1. **One frozen split for everything.** `StratifiedKFold(10, shuffle=True, random_state=42)` over `train.csv` in id
    order, the split used by the public OOF libraries, so every out-of-fold file stacks row for row.
@@ -160,6 +191,8 @@ only if its correlation there exceeds 3σ of the null (0.012 for 66,866 rows).
 
 ## What did not help (measured, not assumed)
 
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme/06-not-helped-dark.gif"><img src="docs/readme/06-not-helped.gif" alt="Ledger of seven ideas that did not help, and the blend weights of our own legs" width="100%"></picture><br><sub>Animated figure A6 — The README table as a ledger, next to the nested blend v4 weights (results/blend_v4_report.json).</sub></p>
+
 | Idea | Result |
 |---|---|
 | Exact income × recipe-cell target encoding | −0.00012 per fold; removed from the final legs |
@@ -179,6 +212,8 @@ Raw numbers: [`results/ablations.json`](results/ablations.json), [`results/legs.
 
 ## Open doors
 
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme/07-open-doors-dark.gif"><img src="docs/readme/07-open-doors.gif" alt="Seven open research directions on a track, with the shared acceptance test below" width="100%"></picture><br><sub>Animated figure A7 — The seven directions of ROADMAP.md, all untested, and the acceptance test they share.</sub></p>
+
 A null result is only as good as the space it searched. The search alphabet here is integer transforms of single
 columns and their joint keys, with group-mean readouts. Structures outside that space are untested, and several are
 concrete enough to try: hierarchical (partial-pooling) encodings of the income identity, readouts that are not group
@@ -186,6 +221,49 @@ means, search over pairs of rows rather than single rows, neural program synthes
 how the synthetic rows were produced. Each is written up as a testable hypothesis with an acceptance criterion in
 **[ROADMAP.md](ROADMAP.md)**. If you beat the numbers above honestly, please open an issue: we will add your result
 and credit you.
+
+## Possible improvements
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme/08-improvements-dark.gif"><img src="docs/readme/08-improvements.gif" alt="Four limitations of the current results, each paired with a testable next step" width="100%"></picture><br><sub>Animated figure A8 — Each improvement answers a limitation stated in this README. None has been tried.</sub></p>
+
+Each item answers a limitation reported above. Items 1-4 are hypotheses with the acceptance test in
+[ROADMAP.md](ROADMAP.md) (directions 7, 1, 6 and 2-3); none has been run. The last item is an analytic remark.
+
+- **Search budget.** The power analysis found planted single-atom structures worth about 0.002 AUC but missed a
+  two-atom structure of the same size. A sequential design that spends more evaluations near promising programs, tested
+  by re-running that planted structure with the same budget, would show whether the miss was a budget problem.
+- **Fixed smoothing priors.** Stronger fixed smoothing was neutral or negative on 3 folds. An empirical-Bayes,
+  partial-pooling encoding of the income identity [[5](#ref-5)] would let the amount of shrinkage depend on the group; the
+  same-income residual correlation (−0.032) is the first quantity to check.
+- **Neural legs.** Our MLP and 48-epoch RealMLP received zero blend weight. Training a RealMLP to convergence is a direct
+  test of whether a neural leg can earn weight (ROADMAP direction 6: public RealMLP 0.9461 against our 0.9454; budget about
+  20 GPU-hours on an RTX 3090). RealMLP is described in [[13](#ref-13)].
+- **Search alphabet.** The search reads group means of integer transforms of single columns. Readouts that are not group
+  means, and programs over neighbourhoods of rows, widen the space that the null result covers.
+- **Detection floor.** With a reserved fold of 66,866 rows the 3σ threshold is 0.012 on the correlation scale, and
+  structures worth ≤ 0.0008 AUC cannot be confirmed there. By that formula the threshold falls only with the square root
+  of the reserved sample size, so a larger reserved set helps slowly.
+
+## Real-world applications
+
+<p align="center"><picture><source media="(prefers-color-scheme: dark)" srcset="docs/readme/09-applications-dark.gif"><img src="docs/readme/09-applications.gif" alt="Six application cards appearing one after another" width="100%"></picture><br><sub>Animated figure A9 — Where the method could be reused. These are potential uses, not deployments.</sub></p>
+
+The setting is a competition, so the following are potential uses of the method, not results of this repository:
+
+- **Estimating a ceiling early.** An oracle bound tells a team whether the remaining gap is signal or sampling noise.
+  Here the nested blend (0.946420) sits within the sampling error of its oracle bound (0.94660 ± 0.00028).
+- **Honest model validation.** One frozen split, nested encoding and a nested blend give out-of-fold scores in which
+  the encodings and the blend weights were never fitted on the scored fold; feature and hyper-parameter choices were still
+  made on outer folds 0-2 (docs/METHOD.md, section 5), which is the residual optimism [[9](#ref-9)].
+- **Leakage audits.** The nested target encoder, with a test that it never sees its own label, is a template for checking
+  that target-derived features stay inside their training partition [[8](#ref-8), [14](#ref-14)].
+- **Power-checked negative results.** Planting a signal of known size and re-running the search states what it could have
+  found, so "nothing found" comes with a detection limit.
+- **Auditing synthetic tables.** Tabular generators (for example copula [[15](#ref-15)] or diffusion models [[16](#ref-16)]) are
+  one possible source of residual structure. In this competition the one extra signal found was the generator's copy of incomes from a 10,000-row
+  original table; the residual tests and the reserved-fold search are one way to look for others.
+- **Teaching and review.** The test suite runs offline on synthetic data with the competition schema and shows fold-safe
+  practice without any download.
 
 ## Provenance and licences
 
@@ -215,3 +293,29 @@ Chris Deotte (generator recipes), megayak (six-view OOF library and the public-s
 measurements made an honest ceiling measurable.
 
 Apache-2.0 © 2026 Francisco Angulo de Lafuente.
+
+## Bibliography
+
+1. <a id="ref-1"></a>Roelofs, R., Fridovich-Keil, S., Miller, J., Shankar, V., Hardt, M., Recht, B., & Schmidt, L. (2019). A meta-analysis of overfitting in machine learning. *Advances in Neural Information Processing Systems 32 (NeurIPS 2019)*. https://proceedings.neurips.cc/paper/2019/hash/ee39e503b6bedf0c98c388b7e8589aca-Abstract.html
+2. <a id="ref-2"></a>Chen, T., & Guestrin, C. (2016). XGBoost: A scalable tree boosting system. *Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining*, 785–794. https://doi.org/10.1145/2939672.2939785
+3. <a id="ref-3"></a>Ke, G., Meng, Q., Finley, T., Wang, T., Chen, W., Ma, W., Ye, Q., & Liu, T.-Y. (2017). LightGBM: A highly efficient gradient boosting decision tree. *Advances in Neural Information Processing Systems 30 (NIPS 2017)*. https://proceedings.neurips.cc/paper_files/paper/2017/hash/6449f44a102fde848669bdd9eb6b76fa-Abstract.html
+4. <a id="ref-4"></a>Micci-Barreca, D. (2001). A preprocessing scheme for high-cardinality categorical attributes in classification and prediction problems. *ACM SIGKDD Explorations Newsletter*, 3(1), 27–32. https://doi.org/10.1145/507533.507538
+5. <a id="ref-5"></a>Efron, B., & Morris, C. (1975). Data Analysis Using Stein's Estimator and its Generalizations. *Journal of the American Statistical Association*, 70(350), 311–319. https://doi.org/10.1080/01621459.1975.10479864
+6. <a id="ref-6"></a>Caruana, R., Niculescu-Mizil, A., Crew, G., & Ksikes, A. (2004). Ensemble selection from libraries of models. *Proceedings of the Twenty-First International Conference on Machine Learning (ICML '04)*, 18. https://doi.org/10.1145/1015330.1015432
+7. <a id="ref-7"></a>Efron, B. (1979). Bootstrap Methods: Another Look at the Jackknife. *The Annals of Statistics*, 7(1), 1–26. https://doi.org/10.1214/aos/1176344552
+8. <a id="ref-8"></a>Kaufman, S., Rosset, S., Perlich, C., & Stitelman, O. (2012). Leakage in data mining. *ACM Transactions on Knowledge Discovery from Data*, 6(4), 1–21. https://doi.org/10.1145/2382577.2382579
+9. <a id="ref-9"></a>Varma, S., & Simon, R. (2006). Bias in error estimation when using cross-validation for model selection. *BMC Bioinformatics*, 7, 91. https://doi.org/10.1186/1471-2105-7-91
+10. <a id="ref-10"></a>Dunn, O. J. (1961). Multiple Comparisons among Means. *Journal of the American Statistical Association*, 56(293), 52–64. https://doi.org/10.1080/01621459.1961.10482090
+11. <a id="ref-11"></a>Angulo de Lafuente, F. (2026). *Holographic-Reservoir: Holographic Reservoir Computing Framework (simulation and optional ASIC hardware)* [Software repository]. GitHub. https://github.com/Agnuxo1/Holographic-Reservoir
+12. <a id="ref-12"></a>Angulo de Lafuente, F. (2026). *Airline satisfaction — nested ensembles and Darwin-Cage diagnostics* [Software repository]. GitHub. https://github.com/Agnuxo1/s6e10-airline-satisfaction
+13. <a id="ref-13"></a>Holzmüller, D., Grinsztajn, L., & Steinwart, I. (2024). Better by Default: Strong Pre-Tuned MLPs and Boosted Trees on Tabular Data. *arXiv* 2407.04491. https://arxiv.org/abs/2407.04491
+14. <a id="ref-14"></a>Kapoor, S., & Narayanan, A. (2023). Leakage and the reproducibility crisis in machine-learning-based science. *Patterns*, 4(9), 100804. https://doi.org/10.1016/j.patter.2023.100804
+15. <a id="ref-15"></a>Patki, N., Wedge, R., & Veeramachaneni, K. (2016). The Synthetic Data Vault. *2016 IEEE International Conference on Data Science and Advanced Analytics (DSAA)*, 399–410. https://doi.org/10.1109/DSAA.2016.49
+16. <a id="ref-16"></a>Kotelnikov, A., Baranchuk, D., Rubachev, I., & Babenko, A. (2022). TabDDPM: Modelling Tabular Data with Diffusion Models. *arXiv* 2209.15421. https://arxiv.org/abs/2209.15421
+
+---
+
+<div align="center">
+<sub>Built by <a href="https://github.com/Agnuxo1">Francisco Angulo de Lafuente</a> · every animated figure renders a
+published file named in its footer or a real offline run of the test suite</sub>
+</div>
