@@ -18,6 +18,10 @@ analysis of that search, and every number behind the claims.
 
 **Contents** — [Results at a glance](#results-at-a-glance) · [Background](#background) · [Why every top score looks the same](#why-every-top-score-looks-the-same) · [The private leaderboard confirmed the ceiling](#the-private-leaderboard-confirmed-the-ceiling) · [What is inside](#what-is-inside) · [Quickstart](#quickstart) · [Method in one screen](#method-in-one-screen) · [The Darwin-Cage experiment](#the-darwin-cage-experiment) · [What did not help (measured, not assumed)](#what-did-not-help-measured-not-assumed) · [Open doors](#open-doors) · [Possible improvements](#possible-improvements) · [Real-world applications](#real-world-applications) · [Provenance and licences](#provenance-and-licences) · [Citation](#citation) · [Acknowledgements](#acknowledgements) · [Bibliography](#bibliography)
 
+<!-- impact-note:start -->
+<sub><strong>Efficiency and practical value.</strong> Honest Ceiling combines fold-safe ensembling with residual analysis and a reserved-fold search for remaining predictive structure. Its practical value is to distinguish useful model improvements from noise before committing further training effort. The <a href="#the-darwin-cage-experiment">power-checked search</a> records both failed candidates and detectable planted signals, giving teams a reusable basis for allocating experiments and setting defensible stopping criteria.</sub>
+<!-- impact-note:end -->
+
 ## Results at a glance
 
 | | Value | Evidence |
